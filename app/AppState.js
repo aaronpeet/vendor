@@ -6,9 +6,12 @@ import { isValidProp } from "./Utils/isValidProp.js"
 class AppState extends EventEmitter {
   /** @type {Value[]} */
   values = []
-  customer = new Customer('Aaron', 2.00)
+  customer = new Customer('Aaron', 4.00)
   soda = new Snack('soda', 0.75)
   chips = new Snack('chips', 1.00)
+  gum = new Snack('gum', 0.50)
+  water = new Snack('water', 1.25)
+  
   totalCost = 0
 }
 
