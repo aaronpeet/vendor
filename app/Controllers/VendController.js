@@ -1,14 +1,22 @@
-import { ProxyState } from "../AppState.js"
-import {vendServices} from "../Services/VendService.js"
+import { ProxyState } from "../AppState.js";
+import { vendService } from "../Services/VendService.js";
+
+function _draw() {
+    let customer = ProxyState.name
+    document.getElementById('name').innerText = customer.name
+    document.getElementById('money').innerText = customer.money
+}
 
 
-
-
-export default class Vend{
+export default class VendController{
     constructor() {
-       
+       _draw()
     }
-    total() {
-         console.log('you are vending from controller')
+   
+    selectSnack(type) {
+        vendService.selectSnack()
+    }
+    buy() {
+        vendService.buy()
     }
 }
