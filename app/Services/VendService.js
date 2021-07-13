@@ -3,8 +3,8 @@ import { ProxyState } from "../AppState.js"
 
 
 class VendService{
-    snackSelect() {
-        ProxyState.totalCost += ProxyState.snack.price
+    snackSelect(type) {
+        ProxyState.totalCost += ProxyState[type].price
 
 document.getElementById('totalCost').innerText = ProxyState.totalCost.toFixed(2)
 

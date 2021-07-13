@@ -13,8 +13,8 @@ export default class VendController{
        _draw()
     }
    
-    snackSelect() {
-        vendService.snackSelect()
+    snackSelect(type) {
+        vendService.snackSelect(type)
     }
     buy() {
         vendService.buy()

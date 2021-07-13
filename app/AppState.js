@@ -7,7 +7,8 @@ class AppState extends EventEmitter {
   /** @type {Value[]} */
   values = []
   customer = new Customer('Aaron', 2.00)
-  snack = new Snack('soda', 0.75)
+  soda = new Snack('soda', 0.75)
+  chips = new Snack('chips', 1.00)
   totalCost = 0
 }
 
