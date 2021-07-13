@@ -26,10 +26,9 @@
         <h1>Customer: <span id="name"></span></h1>
         <h3>Amount available: $ <span id="money">0.00</span></h3>
 
-        <button class=" btn btn-primary" onclick="snackSelect(soda)">Soda</button>
-        <button class=" btn btn-primary" onclick="snackSelect(chips)">Chips</button>
-        <div>Total Cost:<span id="totalCost">0.00</span></div>
-        <button class=" btn btn-primary" onclick="buy()">buy</button>
+        <button class=" btn btn-primary" onclick="app.vendController.snackSelect()">Soda</button>
+        <div>Total Cost:<span id="totalCost"> 0.00</span></div>
+        <button class=" btn btn-primary" onclick="app.vendController.buy()">buy</button>
     </main>
     <footer class="bg-dark text-light">
         <div class="text-center">

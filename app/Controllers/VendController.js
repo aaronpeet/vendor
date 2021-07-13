@@ -2,9 +2,9 @@ import { ProxyState } from "../AppState.js";
 import { vendService } from "../Services/VendService.js";
 
 function _draw() {
-    let customer = ProxyState.name
+    let customer = ProxyState.customer
     document.getElementById('name').innerText = customer.name
-    document.getElementById('money').innerText = customer.money
+    document.getElementById('money').innerText = customer.money.toFixed(2)
 }
 
 
@@ -13,10 +13,11 @@ export default class VendController{
        _draw()
     }
    
-    selectSnack(type) {
-        vendService.selectSnack()
+    snackSelect() {
+        vendService.snackSelect()
     }
     buy() {
         vendService.buy()
+        _draw()
     }
 }

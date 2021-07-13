@@ -3,18 +3,22 @@ import { ProxyState } from "../AppState.js"
 
 
 class VendService{
-    snackSelect(type) {
-        totalCost += ProxyState.snack.price //note: how do i use [type] to represent my snack?
+    snackSelect() {
+        ProxyState.totalCost += ProxyState.snack.price
 
-document.getElementById('totalCost').innerText = totalCost
+document.getElementById('totalCost').innerText = ProxyState.totalCost.toFixed(2)
 
     }
     buy() {
-        if (ProxyState.customer.money >= totalCost) {  //note: where should i store my "totalCost" variable
-            ProxyState.customer.money -= totalCost
+        if (ProxyState.customer.money >= ProxyState.totalCost && ProxyState.totalCost !=0) {  
+            ProxyState.customer.money -= ProxyState.totalCost
+            ProxyState.totalCost = 0 
+            return ProxyState.customer.money
         } else {
             alert('Insufficient Funds')
         }
+        document.getElementById('money').innerText = ProxyState.customer.money.toFixed(2)
+        document.getElementById('totalCost').innerText = ProxyState.totalCost.toFixed(2)
     }
 }
 
